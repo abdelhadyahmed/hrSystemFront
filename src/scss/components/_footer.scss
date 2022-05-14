@@ -1,0 +1,15 @@
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    .container{
+        text-align: center;
+    }
+    background-color: $primary-color;
+    
+    &__copyright{
+        color: #fff;
+        font-size: 1.5rem;
+        padding: 2rem;
+    }
+}
