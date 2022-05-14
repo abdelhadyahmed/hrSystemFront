@@ -15,11 +15,11 @@ export const getEmployees = () =>{
     }
 }
 
-export const addEmployee = (employee) =>{
+export const addEmployee = (employeeObject) =>{
     return async (dispatch)=>{
         try{
-            await axios.post(`${API_URL}/store`,employee);
-            dispatch({type: ADD_EMPLOYEE, employee})
+            const req = await axios.post(`${API_URL}/store`,employeeObject);
+            dispatch({type: ADD_EMPLOYEE, employee: req.data})
         }catch(error){
             console.log(error.message)
         }
@@ -27,11 +27,11 @@ export const addEmployee = (employee) =>{
 }
 
 
-export const updateEmployee = (employeeObject,id)=>{
+export const updateEmployee = (employeeObject)=>{
     return async (dispatch)=>{
         try{
-            await axios.post(`${API_URL}/update/${id}`,employeeObject)
-            dispatch({type: UPDATE_EMPLOYEE, employee: employeeObject, id})
+            const req = await axios.post(`${API_URL}/update/${employeeObject.id}`,employeeObject)
+            dispatch({type: UPDATE_EMPLOYEE, updatedEmployee: req.data})
         }catch(error){
             console.log(error.message)
         }

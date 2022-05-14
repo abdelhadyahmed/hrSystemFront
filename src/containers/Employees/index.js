@@ -18,14 +18,14 @@ export default function Employees() {
     
     const handleEdit = (id)=>{
         dispatch(updateEmployee({
-                email: "test1@email.com",
-                first_name: "Abdelhady",
-                hire_date: "adfcadv",
                 id: id,
+                first_name: "Abdelhady",
                 last_name: "Ahmed",
-                phone_number: "adfadv",
-                salary: "fadf",
-        },id))
+                email: "test1@email.com",
+                phone_number: "01116246917",
+                hire_date: "19-5-2022",
+                salary: "600$",
+        }))
     }
 
     return (

@@ -7,16 +7,13 @@ const employeeReducer = (state= {}, action)=>{
         case ADD_EMPLOYEE:
             return {...state, allEmployees: [...state.allEmployees, action.employee]}
         case UPDATE_EMPLOYEE:
-            let updatedEmployee = state.allEmployees.map((employee)=>{
-                if(employee.id === action.id){
-                    return { ...action.employee }
-                }
+            let updatedEmployees = state.allEmployees.map((employee)=>{
+                if(employee.id === action.updatedEmployee.id) return { ...action.updatedEmployee }
                 return employee
             })
-            return {...state, allEmployees: updatedEmployee}
-        case DELETE_EMPLOYEE:
-            let updatedEmployees = state.allEmployees.filter(employee=> employee.id !== action.id)
             return {...state, allEmployees: updatedEmployees}
+        case DELETE_EMPLOYEE:
+            return {...state, allEmployees: state.allEmployees.filter(employee=> employee.id !== action.id)}
         default:
             return state
     }
