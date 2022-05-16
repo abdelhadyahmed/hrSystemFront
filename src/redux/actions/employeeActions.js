@@ -1,6 +1,6 @@
 import axios from "axios"
+import { API_URL } from "../../config"
 import { ADD_EMPLOYEE, DELETE_EMPLOYEE, GET_EMPLOYEES, UPDATE_EMPLOYEE } from "./types"
-const API_URL = "http://127.0.0.1:8000/api"
 
 export const getEmployees = () =>{
     let employees = []
